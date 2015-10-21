@@ -2284,7 +2284,7 @@ int i, c, v;
 		if (c < 0) return NULL;	/* Wrap around ?? */
 	}
 
-	if (sep != NULL) c += (bl->qty - 1) * sep->slen;
+	if (sep != NULL && bl->qty > 0) c += (bl->qty - 1) * sep->slen;
 
 	b = (bstring) bstr__alloc (sizeof (struct tagbstring));
 	if (NULL == b) return NULL; /* Out of memory */
